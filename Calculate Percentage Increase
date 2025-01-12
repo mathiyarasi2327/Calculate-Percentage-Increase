@@ -1,0 +1,53 @@
+# Calculate-Percentage-Increase
+import java.util.Scanner;
+
+class PercentageIncrease {
+    // Instance variables
+    private double initialValue;
+    private double newValue;
+
+    // Constructor to initialize the values
+    public PercentageIncrease(double initialValue, double newValue) {
+        this.initialValue = initialValue;
+        this.newValue = newValue;
+    }
+
+    // Method to calculate percentage increase
+    public double calculatePercentageIncrease() {
+        // Formula for percentage increase: ((newValue - initialValue) / initialValue) * 100
+        return ((newValue - initialValue) / initialValue) * 100;
+    }
+
+    // Method to display the percentage increase
+    public void displayPercentageIncrease() {
+        double percentage = calculatePercentageIncrease();
+        System.out.println("Percentage Increase: " + percentage + "%");
+    }
+}
+
+public class PercentageIncreaseExample {
+    public static void main(String[] args) {
+        // Create Scanner object to read input
+        Scanner scanner = new Scanner(System.in);
+
+        // Input the initial value and new value
+        System.out.print("Enter the initial value: ");
+        double initialValue = scanner.nextDouble();
+
+        System.out.print("Enter the new value: ");
+        double newValue = scanner.nextDouble();
+
+        // Create an object of PercentageIncrease class
+        PercentageIncrease percentageIncrease = new PercentageIncrease(initialValue, newValue);
+
+        // Display the percentage increase
+        percentageIncrease.displayPercentageIncrease();
+
+        // Close the scanner object to avoid resource leak
+        scanner.close();
+    }
+}
+output:
+Enter the initial value: 50
+Enter the new value: 75
+Percentage Increase: 50.0%
